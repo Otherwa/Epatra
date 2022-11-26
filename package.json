@@ -1,0 +1,14 @@
+{
+  "name": "epatrak",
+  "version": "1.0.0",
+  "description": "email service",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "Mail"
+  ],
+  "author": "Atharv Desai",
+  "license": "ISC"
+}
