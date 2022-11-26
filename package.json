@@ -12,6 +12,7 @@
   "author": "Atharv Desai",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
     "nodemailer": "^6.8.0"
