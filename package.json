@@ -4,7 +4,7 @@
   "description": "email service",
   "main": "app.js",
   "scripts": {
-    "test": "node epatrak.js",
+    "start": "node epatrak.js",
     "dev": "nodemon epatrak.js"
   },
   "keywords": [
