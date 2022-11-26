@@ -24,10 +24,6 @@ app.get('/', (req, res) => {
     res.json({ "msg": "Mail services Running" })
 })
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', (req, res) => {
-    res.send('hello world')
-})
 
 app.post('/api/emails', (req, res) => {
     console.log(req.body)
