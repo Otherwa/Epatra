@@ -21,6 +21,7 @@ npm run test
 
 ### POST req to /api/emails
 
+`/api/emails/&:key`
 
 ```
 {
