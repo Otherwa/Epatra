@@ -1,7 +1,7 @@
 const express = require('express')
 const rateLimit = require('express-rate-limit')
-const { sendmail } = require('mailconfig')
-
+const { sendmail } = require('./mailconfig')
+var bodyParser = require('body-parser')
 
 const app = express()
 const apiLimiter = rateLimit({
@@ -15,6 +15,9 @@ const port = 8080 || (process.env.PORT)
 
 // Apply the rate limiting middleware to API calls only
 app.use(apiLimiter)
+// body parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 console.log("Sevices Running")
 app.get('/', (req, res) => {
@@ -26,7 +29,15 @@ app.get('/', (req, res) => {
     res.send('hello world')
 })
 
-app.post('/api/emails/', async (req, res) => { })
+app.post('/api/emails', (req, res) => {
+    console.log(req.body)
+    const to = req.body.to
+    const subject = req.body.subject
+    const text = req.body.text
+    const message = req.body.message
+
+    sendmail(res, req, to, subject, text, message)
+})
 
 
 app.listen(port, () => {

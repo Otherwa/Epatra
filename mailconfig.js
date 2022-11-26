@@ -1,4 +1,5 @@
 const Nodemailer = require("nodemailer");
+require('dotenv').config()
 
 const transporter = Nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -10,10 +11,10 @@ const transporter = Nodemailer.createTransport({
     }
 })
 
-function sendmail(to, subject, text, message) {
+function sendmail(res, req, to, subject, text, message) {
     const mailOptions = {
         from: process.env.EMAIL,
-        to: email,
+        to: to,
         subject: subject,
         text: text,
         html: message
@@ -22,6 +23,7 @@ function sendmail(to, subject, text, message) {
         if (error) {
             console.log(error)
         } else {
+            res.status(200).json({ msg: 200 })
             console.log('Email sent: ' + info.response)
         }
     })
