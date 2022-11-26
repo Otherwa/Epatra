@@ -3,16 +3,25 @@
 Easy mail service on top of nodemailer
 
 ## usage
-``` npm install ```
+```
+npm install
+```
 
 ## Developement
-``` npm run dev ```
+```
+npm run dev 
+```
 
 ## Run
 
-``` npm run test```
+```
+npm run test
+```
 
-`post req to /api/emails`
+
+### POST req to /api/emails
+
+
 ```
 {
 to: "To Email"
