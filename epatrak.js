@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/api/email/:key', (req, res) => {
+    let key = req.params.key
     if (key == 'SURTURFTW') {
         console.log(req.body)
         const to = req.body.to
