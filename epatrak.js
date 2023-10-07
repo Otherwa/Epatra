@@ -46,24 +46,6 @@ app.post('/api/email/:key', async (req, res) => {
     }
 })
 
-//? Endpoint Subscription page Template
-app.post('/api/emailsub/:key', async (req, res) => {
-    let key = req.params.key
-    if (key == 'SURTURFTW') {
-        console.log(req.body)
-        const to = req.body.to
-        const subject = "Thanks For Being Part of ICON"
-        const text = "Welcome"
-        const message = subTemplate
-
-        await sendmail(res, req, to, subject, text, message)
-    } else {
-        res.json({
-            "msg": "200"
-        })
-    }
-})
-
 app.listen(port, () => {
     console.log(`Epatra listening on port ${port}`)
 })
