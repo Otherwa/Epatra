@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 //? Endpoint Event Page base Template
 app.post('/api/email/:key', async (req, res) => {
     let key = req.params.key
-    if (key == 'SURTURFTW') {
+    if (key == process.env.SECRET_KEY) {
         console.log(req.body)
         const to = req.body.to
         const subject = req.body.subject
