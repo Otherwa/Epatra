@@ -12,7 +12,7 @@ const transporter = Nodemailer.createTransport({
     }
 })
 
-// ! file size issue
+// ! file size issue 1.4sec delay
 const attachment = {
     filename: 'ICON_Brochure.pdf',
     content: fs.createReadStream('./store/files/ICON_Brochure.pdf'), // Use createReadStream to load the file
