@@ -1,6 +1,10 @@
-const Nodemailer = require("nodemailer");
 require('dotenv').config()
+const Nodemailer = require("nodemailer");
 const fs = require('fs');
+const EventEmitter = require('events');
+const myEmitter = new EventEmitter();
+
+myEmitter.setMaxListeners(20);
 
 const transporter = Nodemailer.createTransport({
     host: 'smtp.gmail.com',

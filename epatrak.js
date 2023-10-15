@@ -35,7 +35,7 @@ app.post('/api/email/:key', async (req, res) => {
         const to = req.body.to
         const subject = req.body.subject
         const text = req.body.text
-        const message = req.body.message
+        const message = req.body.message || "None"
 
         await sendmail(res, req, to, subject, text, message)
     } else {
