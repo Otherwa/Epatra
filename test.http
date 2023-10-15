@@ -1,12 +1,11 @@
 ###
 
-POST http://localhost:8080/api/emails
+POST https://crazy-pinafore-deer.cyclic.app/api/emails
 content-type: application/json
 
 {
-    "to": "atharvdesai2002@gmail.com",
-    "subject": "ads",
-    "text": "Sdd",
-    "message": "adsd"
-    
+"to":"atharvdesai2002@gmail.com",
+"text":"Nice",
+"subject":"Nice",
+"message":"Nice"
 }
