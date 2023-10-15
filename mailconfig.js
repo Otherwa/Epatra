@@ -1,5 +1,6 @@
 const Nodemailer = require("nodemailer");
 require('dotenv').config()
+const fs = require('fs');
 
 const transporter = Nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -11,13 +12,22 @@ const transporter = Nodemailer.createTransport({
     }
 })
 
+// ! file size issue
+const attachment = {
+    filename: 'ICON_Brochure.pdf',
+    content: fs.createReadStream('./store/files/ICON_Brochure.pdf'), // Use createReadStream to load the file
+    contentType: 'application/pdf'
+};
+
 async function sendmail(res, req, to, subject, text, message) {
     const mailOptions = {
         from: process.env.EMAIL,
         to: to,
         subject: subject,
         text: text,
-        html: message
+        html: message,
+        // ! only for current instance
+        attachments: [attachment]
     }
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {

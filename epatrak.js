@@ -3,7 +3,6 @@ const rateLimit = require('express-rate-limit')
 const { sendmail } = require('./mailconfig')
 var bodyParser = require('body-parser')
 const cors = require('cors')
-const { subTemplate } = require('./store/sub')
 
 const app = express()
 const apiLimiter = rateLimit({
